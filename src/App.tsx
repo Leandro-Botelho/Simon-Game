@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./App.css";
 
-import { colors, users } from "./Dates.ts";
+import { colors } from "./Dates.ts";
 
 function App() {
   const [sequency, setSequency] = useState<string[]>([]);
@@ -27,6 +27,7 @@ function App() {
     }
   }, [init]);
 
+  //randomColor
   const selectedColor = () => {
     setTimeout(() => {
       const randomColor = colors[Math.floor(Math.random() * colors.length)];
@@ -34,26 +35,33 @@ function App() {
     }, 500);
   };
 
+  //handleSequency logic
   useEffect(() => {
     if (sequency.length !== 0) {
+
       const handleSequency = (i = 0) => {
         let ref: any = null;
 
+        //ref for add class
         if (sequency[i] === "green") ref = refGreen;
         if (sequency[i] === "red") ref = refRed;
         if (sequency[i] === "blue") ref = refBlue;
         if (sequency[i] === "yellow") ref = refYellow;
 
+        //add and remove class
         setTimeout(() => {
           ref?.current.classList.add("brightness-200");
 
           setTimeout(() => {
             ref?.current.classList.remove("brightness-200");
+
             if (i < sequency.length - 1) handleSequency(i + 1);
           }, 300);
         }, 300);
       };
+
       handleSequency();
+
     }
   }, [sequency]);
 
@@ -135,6 +143,8 @@ function App() {
 }
 
 export default App;
+
+//users
 
 //const handleUserList = () => {};
 
