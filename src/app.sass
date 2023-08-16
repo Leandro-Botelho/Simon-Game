@@ -1,0 +1,76 @@
+*
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+    
+body
+    background-color: #172554
+
+.containerAll
+    max-width: 570px
+    margin: 120px auto
+
+
+.containerBtn
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 2rem
+
+.startGame
+    background-color: #0236E0
+    border: none
+    padding: 1.65rem
+    font-size: 4rem
+    font-family: 'VT323', monospace
+    border-radius: 10px
+    color: #fff
+    cursor: pointer
+    transition: .3s 
+    &:hover
+        background-color: #3660eb
+        color: #fff
+.level
+    font-family: 'VT323', monospace
+    font-size: 5.5rem
+    color: #fff
+
+
+.userInput
+    display: flex
+    gap: .65rem
+    
+.inputUser
+    outline: none
+    font-size: 1.35rem
+    padding: .45rem
+    border: none
+    border-radius: 7px
+.btnUser
+    font-size: 1.5rem
+    padding: 1rem
+    transition: .3s
+    cursor: pointer
+    border-radius: 7px
+    border: none
+
+    &:hover
+        opacity: .85
+
+@media (max-width:570px) 
+    .userInput
+        flex-direction: column
+        width: 55%
+    .btnUser
+        font-size: 1.25rem
+        padding: .45rem
+    .inputUser
+        font-size: 1.15rem
+        padding: .75rem
+    .startGame
+        padding: 1rem 1.65rem
+        font-size: 3rem
+
+
+.error
+    border: 2px solid #e74343
